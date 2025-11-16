@@ -45,14 +45,13 @@ while True:
             cv2.putText(frame, f"{warna_target.capitalize()} Terdeteksi!", (x, y - 10),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
 
-    # 5️⃣ Tampilkan hasil
+    # Tampilkan hasil
     cv2.imshow('Frame Asli', frame)
     cv2.imshow('Mask', mask_clean)
 
-    # Tekan 'q' untuk keluar
+    # Keluar
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Lepas kamera dan tutup semua jendela
 cap.release()
 cv2.destroyAllWindows()

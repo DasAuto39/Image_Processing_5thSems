@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 
 # Inisialisasi webcam
-# (Ganti '0' ke '1' atau '2' jika webcam tidak muncul)
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Error: Webcam tidak dapat dibuka.")
