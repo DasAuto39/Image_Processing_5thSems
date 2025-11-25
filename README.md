@@ -38,7 +38,7 @@ The Controller.cs responsible the TCP client. It listens for incoming tracking d
    - Attach the `Controller.cs` script to your Live2D model GameObject.
 
 5. **Optimization**
-   - In the Inspector view of your model, locate the **Cubism Pose Controller** component (if attached) and uncheck/disable it to prevent conflicts with our custom controller.
+   - In the Inspector view of your model, locate the **Cubism Pose Controller** component and uncheck/disable it to prevent conflicts with our custom controller.
 
 6. **Running the Application**
    - Press the **Play** button in Unity to start the server listener.
