@@ -30,7 +30,6 @@ class FaceMeshDetector:
         # Converting the img from BGR to RGB
         img_rgb = cv2.cvtColor(cv2.flip(img, 1), cv2.COLOR_BGR2RGB)
 
-        # To improve performance, the image is marked as not writeable
         img_rgb.flags.writeable = False
         self.results = self.face_mesh.process(img_rgb)
         img_rgb.flags.writeable = True
