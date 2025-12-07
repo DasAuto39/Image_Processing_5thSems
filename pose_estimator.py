@@ -96,7 +96,7 @@ class PoseEstimator:
         self.t_vec = None
 
 
-# --- TEST CODE ---
+# Test code
 def main():
     """
     Test function for pose_estimator.py

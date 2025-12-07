@@ -55,7 +55,7 @@ class Stabilizer:
 
 
 
-# --- TEST CODE ---
+# Test code
 mp = np.array((2, 1), np.float32)  # measurement
 
 def onmouse(k, x, y, s, p):
