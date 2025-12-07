@@ -14,15 +14,12 @@ class Eyes(Enum):
 
 class FacialFeatures:
 
-    # Hard-coded indices for MediaPipe face mesh landmarks
+    # Hard-coded points for MediaPipe face mesh landmarks
     eye_key_indicies=[
         [ 33, 7, 163, 144, 145, 153, 154, 155, 133, 246, 161, 160, 159, 158, 157, 173 ],
         [ 263, 249, 390, 373, 374, 380, 381, 382, 362, 466, 388, 387, 386, 385, 384, 398 ]
     ]
 
-    # --- MODIFICATION ---
-    # '@staticmethod' is removed and 'self' is added as the first argument.
-    # This is now an 'instance method'.
     def eye_aspect_ratio(self, image_points, side):
         # Eye aspect ratio (EAR) is calculated to detect blinks.
         
@@ -121,6 +118,7 @@ class FacialFeatures:
         return np.clip(x_rate, 0.0, 1.0), np.clip(y_rate, 0.0, 1.0)
 
 
+# Test code
 def main():
 
     if 'FaceMeshDetector' not in globals():

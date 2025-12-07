@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 class Stabilizer:
-    """A Kalman filter is used as a point stabilizer."""
+    
 
     def __init__(self,
                  state_num=4,

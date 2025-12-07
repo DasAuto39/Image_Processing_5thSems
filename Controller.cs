@@ -16,31 +16,27 @@ public class VTuberController : MonoBehaviour
     [Header("DEBUGGING")]
     public bool showDebugLogs = true; // CHECK THIS IN INSPECTOR!
 
-    // --- NETWORK SETTINGS ---
     private Thread receiveThread;
     private TcpListener listener;
     private TcpClient client;
     public int port = 5066;
     private bool isRunning = false;
 
-    // --- CACHED PARAMETERS ---
     private CubismParameter p_AngleX, p_AngleY, p_AngleZ;
     private CubismParameter p_EyeL, p_EyeR, p_BallX, p_BallY;
     private CubismParameter p_Mouth, p_MouthForm, p_Cheek, p_Breath;
     private CubismParameter p_ArmLB_Shoulder, p_ArmLB_Elbow;
     private CubismParameter p_ArmRB_Shoulder, p_ArmRB_Elbow, p_ArmRB_Y;
 
-    // --- CACHED PARTS ---
     private CubismPart part_ArmLA, part_ArmRA;
     private CubismPart part_ArmLB, part_ArmRB;
 
-    // --- CONFIGURATION: IDs ---
+    
     [Header("Face IDs")]
     public string ID_AngleX = "ParamAngleX";
     public string ID_AngleY = "ParamAngleY";
     public string ID_AngleZ = "ParamAngleZ";
 
-    // MAKE SURE THESE MATCH YOUR CONSOLE OUTPUT EXACTLY
     public string ID_EyeLOpen = "ParamEyeLOpen";
     public string ID_EyeROpen = "ParamEyeROpen";
 
@@ -64,7 +60,6 @@ public class VTuberController : MonoBehaviour
     public string ID_Part_ArmRA = "PartArmRA";
     public string ID_Part_ArmRB = "PartArmRB";
 
-    // --- IK SETTINGS ---
     [Header("IK Settings")]
     public Vector2 shoulder_offset_L = new Vector2(-0.3f, 0.2f);
     public Vector2 shoulder_offset_R = new Vector2(0.3f, 0.2f);
@@ -72,7 +67,6 @@ public class VTuberController : MonoBehaviour
 
     public float arm_length_scale = 0.8f;
 
-    // --- CALIBRATION THRESHOLDS ---
     [Header("Calibration Settings")]
     public float ear_max_threshold = 0.5f; // Try 0.5
     public float ear_min_threshold = 0.1f; // Try 0.1
@@ -94,7 +88,6 @@ public class VTuberController : MonoBehaviour
     public float elbow_bend_max = 30.0f;
     public float arm_switch_threshold = -0.5f;
 
-    // --- DATA STORE ---
     private volatile float roll, pitch, yaw;
     private volatile float ear_left, ear_right;
     private volatile float x_ratio_left, y_ratio_left, x_ratio_right, y_ratio_right;

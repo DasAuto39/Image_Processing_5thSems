@@ -94,8 +94,7 @@ class HandTracker:
         if p12 and p14: cv2.line(img, p12, p14, (255, 0, 255), 4) # Magenta
         if p14 and p16: cv2.line(img, p14, p16, (255, 0, 255), 4)
 
-
-# --- VISUALIZATION TEST CODE ---
+# Test code
 if __name__ == "__main__":
     print("Initializing Full Body & Hand Tracker...")
     cap = cv2.VideoCapture(0)
