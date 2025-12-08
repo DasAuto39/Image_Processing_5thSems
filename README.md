@@ -54,3 +54,6 @@ The Controller.cs responsible the TCP client. It listens for incoming tracking d
 8. **Result**
    - The connection will be established, and the character should now move in sync with your real-world movements.
 
+You can find the demo video in this Google Drive link
+https://drive.google.com/file/d/1tITE_H7ncz9qJu86ouNZBC91GcFlAhjf/view?usp=sharing
+
