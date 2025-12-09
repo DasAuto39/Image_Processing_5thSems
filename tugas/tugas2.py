@@ -12,10 +12,10 @@ while True:
     if not ret:
         break
 
-    # 1️⃣ Konversi dari BGR ke HSV
+    # Konversi dari BGR ke HSV
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    # 2️⃣ Definisikan rentang HSV untuk warna yang ingin dideteksi
+    #  Rentang HSV untuk warna yang ingin dideteksi
     if warna_target == 'biru':
         lower = np.array([100, 150, 50])   # batas bawah biru
         upper = np.array([140, 255, 255])  # batas atas biru
@@ -26,12 +26,12 @@ while True:
     # Buat mask biner
     mask = cv2.inRange(hsv, lower, upper)
 
-    # 3️⃣ Pembersihan Mask (Morfologi)
+    # Membersihkan Mask (Morfologi)
     kernel = np.ones((5, 5), np.uint8)
     mask_clean = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)   # hapus noise kecil
     mask_clean = cv2.morphologyEx(mask_clean, cv2.MORPH_CLOSE, kernel)  # tutup lubang kecil
 
-    # 4️⃣ Temukan kontur pada mask yang sudah bersih
+    # Menemukan kontur pada mask yang sudah bersih
     contours, _ = cv2.findContours(mask_clean, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     # Loop semua kontur yang ditemukan

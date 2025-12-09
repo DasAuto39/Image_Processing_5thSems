@@ -29,7 +29,7 @@ while True:
     cv2.imshow("Webcam Asli (BGR)", frame)
     
     # Tampilkan Channel H (Hue / Warna)
-    # Ini adalah channel terpenting untuk mendeteksi warna [cite: 60, 63]
+    # Ini adalah channel terpenting untuk mendeteksi warna
     cv2.imshow("Channel H (Hue)", h)
     
     # Tampilkan Channel S (Saturation / Kepekatan)

@@ -11,11 +11,8 @@ if not cap.isOpened():
 # Mendefinisikan rentang bawah (lower) dan atas (upper) untuk warna HITAM
 # Formatnya adalah [H, S, V]
 
-# H (Hue) bisa apa saja: 0-179
-# S (Saturation) bisa apa saja: 0-255
-# V (Value) harus RENDAH: 0 - 50 (Anda bisa ubah '50' ini)
 lower_black = np.array([0, 0, 0])
-upper_black = np.array([179, 255, 50]) # <--- UBAH '50' INI JIKA PERLU
+upper_black = np.array([179, 255, 50]) 
 
 
 print("Webcam terbuka. Menekan 'q' untuk keluar...")
@@ -25,25 +22,25 @@ while True:
     if not ret:
         break
 
-    # 1. Mengkonversi BGR ke HSV
+    # Mengkonversi BGR ke HSV
     hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    # 2. Memisahkan setiap channel untuk visualisasi
+    # Memisahkan setiap channel untuk visualisasi
     h, s, v = cv2.split(hsv_frame)
 
-    # 3. Membuat Mask Biner untuk warna hitam
+    # Membuat Mask Biner untuk warna hitam
     mask = cv2.inRange(hsv_frame, lower_black, upper_black)
 
 
-    # --- Tampilkan Semua Jendela ---
+
     cv2.imshow("Webcam Asli (BGR)", frame)
     
     # Membuka channel H, S, dan V
     cv2.imshow("Channel H (Hue)", h)
     cv2.imshow("Channel S (Saturation)", s)
-    cv2.imshow("Channel V (Value)", v) # <--- Perhatikan channel ini
+    cv2.imshow("Channel V (Value)", v) 
 
-    # JENDELA BARU: Hasil deteksi hitam
+    # Hasil deteksi hitam
     cv2.imshow("Mask Biner (Deteksi Hitam)", mask)
 
 
