@@ -30,8 +30,8 @@ while True:
     mask = cv2.inRange(hsv_frame, lower_black, upper_black)
 
     # 3. Membersihan Mask (Morfologi) 
-    mask_opened = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)# [cite: 78]
-    mask_cleaned = cv2.morphologyEx(mask_opened, cv2.MORPH_CLOSE, kernel) #[cite: 79]
+    mask_opened = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
+    mask_cleaned = cv2.morphologyEx(mask_opened, cv2.MORPH_CLOSE, kernel)
 
     # 4. Temukan Kontur,mencari kontur pada mask yang sudah bersih
     contours, _ = cv2.findContours(mask_cleaned, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
